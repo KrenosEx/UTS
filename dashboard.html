@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <script defer src="dashboard.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <button id="logout">Logout</button>
+    </nav>
+  </header>
+
+  <h1>My Books</h1>
+  <button onclick="window.location.href='/create-book.html'">Add New Book</button>
+  <table id="bookTable">
+    <thead>
+      <tr>
+        <th>ID Buku</th>
+        <th>Foto</th>
+        <th>Judul Buku</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Number of Page</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <footer>
+  </footer>
+</body>
+</html>
