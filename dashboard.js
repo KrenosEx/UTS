@@ -1,5 +1,5 @@
 document.getElementById('logout').addEventListener('click', () => {
-    window.location.href = '/login.html';
+    window.location.href = 'login.html';
   });
   
   async function fetchBooks() {

@@ -14,7 +14,7 @@ document.getElementById('createBookForm').addEventListener('submit', async (e) =
     });
   
     if (response.ok) {
-      window.location.href = '/dashboard.html';
+      window.location.href = 'dashboard.html';
     } else {
       alert('Failed to create book');
     }

@@ -12,7 +12,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     });
   
     if (response.ok) {
-      window.location.href = '/dashboard.html';
+      window.location.href = 'dashboard.html';
     } else {
       alert('Registration failed');
     }
