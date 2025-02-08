@@ -1,0 +1,30 @@
+<?php
+    session_start();
+    $error=(isset($error))?$_SESSION['ERROR']:"";
+?>
+
+<!DOCTYPE html>
+    <head>
+    <title>Create Book</title>
+    <script defer src="create-book.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Create Book</h1>
+        <form id="createBookForm" action="request.php">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required><br><br>
+
+            <label for="publisher">Publisher:</label>
+            <input type="text" id="publisher" name="publisher" required><br><br>
+
+            <label for="number_of_page">Number of Page:</label>
+            <input type="number" id="number_of_page" name="number_of_page" required><br><br>
+
+            <button type="submit">Create</button>
+        </form>
+    </body>
+</html>

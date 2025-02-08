@@ -1,5 +1,5 @@
 document.getElementById('logout').addEventListener('click', () => {
-    window.location.href = 'login.html';
+    window.location.href = 'login.php';
   });
   
   async function fetchBooks() {
@@ -31,11 +31,11 @@ document.getElementById('logout').addEventListener('click', () => {
   fetchBooks();
   
   function viewBook(bookId) {
-    window.location.href = `/book-details.html?id=${bookId}`;
+    window.location.href = `/book-details.php?id=${bookId}`;
   }
   
   function editBook(bookId) {
-    window.location.href = `/update-book.html?id=${bookId}`;
+    window.location.href = `/update-book.php?id=${bookId}`;
   }
   
   async function deleteBook(bookId) {
