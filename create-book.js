@@ -5,7 +5,7 @@ document.getElementById('createBookForm').addEventListener('submit', async (e) =
   const publisher = document.getElementById('publisher').value;
   const number_of_page = document.getElementById('number_of_page').value;
 
-  const response = await fetch('/books/create', {
+  const response = await fetch('/request.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -4,12 +4,12 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
   const password = document.getElementById('password').value;
 
   try {
-    const response = await fetch('register', {
+    const response = await fetch('/UserController.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ username, password, action: "register" })
     });
 
     if (response.ok) {
@@ -23,7 +23,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
       alert('Registration failed. Server error.');
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.info('Error:', error);
     alert('An error occurred during registration.');
   }
 

@@ -1,9 +1,9 @@
 <?php
     session_start();
-    $username = $_SESSION['USERNAME'];
-    $booklist = $_SESSION['BOOKLIST'];
-    $bookData = json_decode($_GET['book'], true);
-    if (isset($bookData)) {
+    $username = isset($_SESSION['username']) ? $_SESSION['username'] : 0;
+    $booklist = isset($_SESSION['BOOKLIST']) ? $_SESSION['BOOKLIST'] : [];
+    $bookData = @json_decode($_GET['book'], true);
+    if ($bookData !== false && isset($bookData)) {
       $_SESSION["BOOKLIST"][] = $bookData;
     }
 ?>
@@ -46,16 +46,20 @@
       <tbody>
         <?php
           if(isset($_SESSION["BOOKLIST"]) && !empty($_SESSION["BOOKLIST"])) {
-            echo "<tr>";
             foreach($booklist as $book) {
-              echo "<th>" . $book['id'] . "</th>";
-              echo "<th>FOTO?</th>";
-              echo "<th>" . $book['title'] . "</th>";
-              echo "<th>" . $book['author'] . "</th>";
-              echo "<th>" . $book['publisher'] . "</th>";
-              echo "<th>" . $book['number_of_page'] . "</th>";
+                echo "<tr>";
+                  echo "<td>" . $book['id'] . "</td>";
+                  echo "<td>FOTO?</td>";
+                  echo "<td>" . $book['title'] . "</td>";
+                  echo "<td>" . $book['author'] . "</td>";
+                  echo "<td>" . $book['publisher'] . "</td>";
+                  echo "<td>" . $book['number_of_page'] . "</td>";
+                  echo "<td>
+<b><a href='detail-book.php?id=" . $book['id'] . "'>[Detail]</a>
+<a style='color: #cb0000' href='delete-book.php?id=" . $book['id'] . "'>[Delete]</a></b>
+</td>";
+                echo "</tr>";
             }
-            echo "</tr>";
           }
         ?>
       </tbody>
